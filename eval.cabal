@@ -1,0 +1,54 @@
+cabal-version:      3.6
+name:               eval
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            AGPL-3.0-only
+license-file:       LICENSE
+author:             AeolianOwl
+maintainer:         65692042+AeolianOwl@users.noreply.github.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  Eval
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.16.0.0,
+                      megaparsec ^>=9.2.0,
+                      text ^>=2.0
+    hs-source-dirs:   src
+    default-language: GHC2021
+    ghc-options:      -Wall
+                      -Wcompat
+
+executable eval
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:
+        base ^>=4.16.0.0,
+        eval
+
+    hs-source-dirs:   app
+    default-language: GHC2021
+    ghc-options:      -Wall
+                      -Wcompat
